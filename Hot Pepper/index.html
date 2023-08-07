@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spicy Pickup Lines Generator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Spicy Pickup Lines Generator</h1>
+    <div class="slider-container">
+      <label for="spiciness-slider">Spiciness Level:</label>
+      <input type="range" id="spiciness-slider" min="1" max="3" step="1" value="1">
+      <span id="spiciness-level">Mild</span>
+    </div>
+    <button id="generate-button">Generate Pickup Line</button>
+    <button id="copy-button" disabled>Copy to Clipboard</button>
+    <div class="pickup-line" id="pickup-line-display"></div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "name": "HotPepper",
+  "version": "1.0.0",
+  "description": "Hot Pepper",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "vqmpkillab;e",
+  "license": "MIT",
+  "dependencies": {
+    "electron": "^14.0.0"
+  }
+}
