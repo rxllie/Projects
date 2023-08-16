@@ -1,4 +1,9 @@
 # Projects
+
+dsc.gg/killable
+dsc.gg/bloodhotel
+dsc.gg/bloodgate
+
 Every background of this project is AI Generated.
 
 
@@ -10,3 +15,6 @@ At Discord.html, the default Discord invite link is mine. To change the invite l
 
 Space Junk Collector >>>>>
 The width and height is broken, so that is a bug I guess.
+
+Hot Pepper >>>>>
+Treat me like white tees
