@@ -1,49 +1,57 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Arial', sans-serif;
   margin: 0;
   padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: black;
+  background-color: #1a1a1a; /* Slightly dark background for contrast */
 }
 
 .container {
   text-align: center;
-  background-color: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 12px; /* Smoother rounded corners */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Softer, wider shadow */
+  max-width: 400px; /* Prevent container from being too wide */
+  width: 100%;
 }
 
 .slider-container {
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
 .pickup-line {
   margin-top: 20px;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: bold;
+  color: #333; /* Darker text for better readability */
 }
 
 #copy-button:disabled {
-  background-color: gray;
+  background-color: #ccc;
   cursor: not-allowed;
 }
 
 button {
-  background-color: gray; /* Change button background color to gray */
+  background-color: #007bff; /* Button with a more vibrant color */
   color: white;
   border: none;
-  border-radius: 25px; /* Add rounded corners */
-  padding: 10px 20px;
-  font-size: 14px;
+  border-radius: 25px;
+  padding: 12px 25px; /* Larger padding for better touch targets */
+  font-size: 16px; /* Bigger text for better readability */
   cursor: pointer;
-  transition: background-color 0.3s, transform 0.2s;
+  transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
 }
 
 button:hover {
-  background-color: darkgray; /* Change button color on hover */
+  background-color: #0056b3; /* Darker button color on hover */
   transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Slight shadow effect on hover */
+}
+
+button:active {
+  transform: scale(0.98); /* Slight shrink on click */
 }
