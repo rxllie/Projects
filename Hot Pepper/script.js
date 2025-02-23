@@ -1,20 +1,27 @@
-const pickupLines = {
-  1: [
-    "Are you a Wi-Fi signal? Because I'm feeling a connection.",
-    "Do you have a map? I just got lost in your eyes.",
-    "Are you made of copper and tellurium? Because you're Cu-Te.",
-  ],
-  2: [
-    "Are you a campfire? Because you're hot and I want s'more.",
-    "Is your name Google? Because you have everything I've been searching for.",
-    "Are you a bank loan? Because you have my interest.",
-  ],
-  3: [
-    "Are you a volcano? Because I lava you.",
-    "Do you have a name, or can I call you mine?",
-    "Do you believe in love at first swipe?",
-  ],
-};
+async function generatePickupLine(spiciness) {
+  const prompts = {
+    1: "Generate a mild and funny pickup line.",
+    2: "Generate a medium spicy pickup line with a flirty tone.",
+    3: "Generate a bold and spicy pickup line with confidence.",
+  };
+  
+  const response = await fetch("https://api.openai.com/v1/completions", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": `Bearer YOUR_OPENAI_API_KEY`,
+    },
+    body: JSON.stringify({
+      model: "gpt-4",
+      prompt: prompts[spiciness],
+      max_tokens: 50,
+      temperature: 0.7,
+    }),
+  });
+
+  const data = await response.json();
+  return data.choices[0].text.trim();
+}
 
 const spicinessSlider = document.getElementById("spiciness-slider");
 const spicinessLevel = document.getElementById("spiciness-level");
@@ -27,11 +34,11 @@ spicinessSlider.addEventListener("input", () => {
   spicinessLevel.textContent = getSpicinessText(spiciness);
 });
 
-generateButton.addEventListener("click", () => {
+generateButton.addEventListener("click", async () => {
   const spiciness = parseInt(spicinessSlider.value);
-  const randomIndex = Math.floor(Math.random() * pickupLines[spiciness].length);
-  const randomPickupLine = pickupLines[spiciness][randomIndex];
-  pickupLineDisplay.textContent = randomPickupLine;
+  pickupLineDisplay.textContent = "Generating...";
+  const pickupLine = await generatePickupLine(spiciness);
+  pickupLineDisplay.textContent = pickupLine;
   copyButton.removeAttribute("disabled");
 });
 
